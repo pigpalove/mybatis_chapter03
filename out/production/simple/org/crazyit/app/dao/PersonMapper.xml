@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MyBatis Mapper文件的DTD -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.crazyit.app.dao.PersonMapper">
+	<select id="findPersonByAge" resultMap="personMap">
+		select * from person_inf where person_age>#{age}
+	</select>
+	<resultMap id="personMap" type="person">
+		<id column="person_id" property="id"/>
+		<result column="person_name" property="name"/>
+		<result column="person_age" property="age"/>
+		<!-- 定义辨别者列，列名person_type -->
+		<discriminator column="person_type" javaType="int">
+			<!-- 辨别者列的值为1时，代表该记录是Customer实例 -->
+			<case value="1" resultType="customer">
+				<result column="comments" property="comments"/>
+			</case>
+		</discriminator>
+	</resultMap>
+</mapper>

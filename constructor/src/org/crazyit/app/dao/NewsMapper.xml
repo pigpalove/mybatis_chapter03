@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MyBatis Mapper文件的DTD -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.crazyit.app.dao.NewsMapper">
+	<select id="findNewsByTitle" resultMap="newsMap">
+		select * from news_inf where news_title like #{title}
+	</select>
+	<!-- 指定该resultMap映射的Java对象是news类型 -->
+	<resultMap id="newsMap" type="news">
+		<constructor>
+			<!-- 配置两个参数，表明调用带两个参数的构造器
+				此处的配置顺序，决定了构造器参数的顺序：(Integer,String)
+			-->
+			<idArg column="news_id" javaType="int"/>
+			<arg column="news_title" javaType="String"/>
+		</constructor>
+		<!-- 指定数据列与属性之间的对应关系 -->
+		<result column="news_content" property="content"/>
+	</resultMap>
+
+</mapper>

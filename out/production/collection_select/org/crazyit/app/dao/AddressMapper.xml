@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MyBatis Mapper文件的DTD -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.crazyit.app.dao.AddressMapper">
+	<select id="getAddress" resultMap="addressMap">
+		select * from address_inf where addr_id=#{id}
+	</select>
+	<resultMap id="addressMap" type="address">
+		<id column="addr_id" property="id"/>
+		<result column="addr_detail" property="detail"/>
+		<!-- 使用select指定的select语句去抓取关联实体，
+		当前实体的owner_id列的值作为参数传给select语句 -->
+		<association property="person" javaType="Person"
+			column="owner_id" select="org.crazyit.app.dao.PersonMapper.getPerson"
+			fetchType="lazy"/>
+	</resultMap>
+	<select id="findAddressByOwner" resultMap="addressMap">
+		select * from address_inf where owner_id=#{id}
+	</select>
+</mapper>

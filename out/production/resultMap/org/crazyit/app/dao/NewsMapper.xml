@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MyBatis Mapper文件的DTD -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.crazyit.app.dao.NewsMapper">
+	<select id="findNewsByTitle" resultMap="newsMap">
+		select * from news_inf where news_title like #{title}
+	</select>
+	<!-- 指定该resultMap映射的Java对象是news类型 -->
+	<resultMap id="newsMap" type="news">
+		<!-- 指定数据列与属性之间的对应关系 -->
+		<id column="news_id" property="id"/>
+		<result column="news_title" property="title"/>
+		<result column="news_content" property="content"/>
+	</resultMap>
+</mapper>

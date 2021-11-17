@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/N2N_join/N2N_join.iml" filepath="$PROJECT_DIR$/N2N_join/N2N_join.iml" />
+      <module fileurl="file://$PROJECT_DIR$/N2N_select/N2N_select.iml" filepath="$PROJECT_DIR$/N2N_select/N2N_select.iml" />
+      <module fileurl="file://$PROJECT_DIR$/N2N_select_annotation/N2N_select_annotation.iml" filepath="$PROJECT_DIR$/N2N_select_annotation/N2N_select_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/association_columnPrefix/association_columnPrefix.iml" filepath="$PROJECT_DIR$/association_columnPrefix/association_columnPrefix.iml" />
+      <module fileurl="file://$PROJECT_DIR$/association_join/association_join.iml" filepath="$PROJECT_DIR$/association_join/association_join.iml" />
+      <module fileurl="file://$PROJECT_DIR$/association_select/association_select.iml" filepath="$PROJECT_DIR$/association_select/association_select.iml" />
+      <module fileurl="file://$PROJECT_DIR$/association_select_annotation/association_select_annotation.iml" filepath="$PROJECT_DIR$/association_select_annotation/association_select_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/autoMapping/autoMapping.iml" filepath="$PROJECT_DIR$/autoMapping/autoMapping.iml" />
+      <module fileurl="file://$PROJECT_DIR$/collection_join/collection_join.iml" filepath="$PROJECT_DIR$/collection_join/collection_join.iml" />
+      <module fileurl="file://$PROJECT_DIR$/collection_select/collection_select.iml" filepath="$PROJECT_DIR$/collection_select/collection_select.iml" />
+      <module fileurl="file://$PROJECT_DIR$/collection_select_annotation/collection_select_annotation.iml" filepath="$PROJECT_DIR$/collection_select_annotation/collection_select_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/constructor/constructor.iml" filepath="$PROJECT_DIR$/constructor/constructor.iml" />
+      <module fileurl="file://$PROJECT_DIR$/constructor_annotation/constructor_annotation.iml" filepath="$PROJECT_DIR$/constructor_annotation/constructor_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mybatis_chapter03.iml" filepath="$PROJECT_DIR$/mybatis_chapter03.iml" />
+      <module fileurl="file://$PROJECT_DIR$/resultMap/resultMap.iml" filepath="$PROJECT_DIR$/resultMap/resultMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/resultMap_annotation/resultMap_annotation.iml" filepath="$PROJECT_DIR$/resultMap_annotation/resultMap_annotation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/simple/simple.iml" filepath="$PROJECT_DIR$/simple/simple.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!-- MyBatis Mapper文件的DTD -->
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.crazyit.app.dao.PersonMapper">
+	<!-- 使用多表连接查询 -->
+	<select id="findPersonById" resultMap="personMap">
+		select p.*,
+		a.addr_id addr_id, a.addr_detail addr_detail
+		from person_inf p
+		join address_inf a
+		on a.owner_id = p.person_id
+		where person_id > #{id}
+	</select>
+	<resultMap id="personMap" type="person">
+		<!-- 指定person_id、person_name、person_age映射到person实体 -->
+		<id column="person_id" property="id"/>
+		<result column="person_name" property="name"/>
+		<result column="person_age" property="age"/>
+		<!-- 指定其他列（addr_id, addr_detail）映射到关联的address实体，
+		使用AddressMapper.addressMap执行映射 -->
+		<collection property="addresses" javaType="ArrayList"
+			ofType="address"
+			resultMap="org.crazyit.app.dao.AddressMapper.addressMap"/>
+	</resultMap>
+	<!-- 使用多表连接查询 -->
+	<select id="getPerson" resultMap="personMap">
+		select p.*,
+		a.addr_id addr_id, a.addr_detail addr_detail
+		from person_inf p
+		join address_inf a
+		on a.owner_id = p.person_id
+		where person_id = #{id}
+	</select>
+</mapper>
